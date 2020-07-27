@@ -33,7 +33,7 @@
     </div>
 
     
-    
+    <div class="container text-danger error"></div>
     
 
 
@@ -68,6 +68,14 @@ $.ajaxSetup({
             })
             return true;
         }
+
+        $.get("/error", function(data){
+            if(data){
+                $(".error").html(data);
+            } else {
+                $(".error").html('');
+            }
+        });
     </script>
 </body>
 </html>
